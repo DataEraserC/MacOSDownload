@@ -192,6 +192,7 @@ jobs:
           sudo hdiutil create -o /tmp/Ventura -size 16384m -volname Ventura -layout SPUD -fs HFS+J
           sudo hdiutil attach /tmp/Ventura.dmg -noverify -mountpoint /Volumes/Ventura
           sleep 10
+          ls /Applications/ |grep Install
           sudo /Applications/Install\ macOS\ Ventura\ Beta.app/Contents/Resources/createinstallmedia --volume /Volumes/Ventura --nointeraction
           hdiutil eject -force /Volumes/Install\ macOS\ Ventura\ Beta
           sudo mv /tmp/Ventura.dmg ~/Desktop/Ventura.dmg
